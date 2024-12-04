@@ -25,25 +25,12 @@ namespace BananaGame.Application
                 cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             });
 
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddScoped<IValidator<CreatePlayerCommand>, CreatePlayerCommandValidator>();
             services.AddScoped<IValidator<UpdatePlayerCommand>, UpdatePlayerCommandValidator>();
             services.AddScoped<IValidator<StartGameSessionCommand>, CreateGameSessionCommandVaidator>();
             services.AddScoped<IValidator<SignUpCommand>, SignUpCommandValidator>();
             services.AddScoped<IValidator<SignInCommand>, SignInCommandValidator>();
-
-            /*             services.AddHttpClient<IQuestionAPIClient, QuestionAPIClient>(client =>
-                        {
-                            client.BaseAddress = new Uri("https://marcconrad.com/uob/banana/api.php");
-                            client.DefaultRequestHeaders.Add("Accept", "application/json");
-
-                            // optional settings
-                            client.Timeout = TimeSpan.FromSeconds(30);
-                            client.DefaultRequestVersion = new Version(1, 0);
-                            client.DefaultVersionPolicy = HttpVersionPolicy.RequestVersionExact;
-                            client.MaxResponseContentBufferSize = 1_000_000;
-                        });
-            */
 
             services.AddScoped<IQuestionAPIClient, QuestionAPIClient>();
 

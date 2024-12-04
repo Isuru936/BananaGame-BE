@@ -1,36 +1,35 @@
-﻿using BananaGame.Application.Shared;
-using FluentValidation.Results;
-
-namespace BananaGame.Application.Exceptions
+﻿namespace BananaGame.Application.Exceptions
 {
-    public class ValdationExceptions : Exception
+    public class ValdationException : Exception
     {
-        public IReadOnlyCollection<ValidationFailure> Errors { get; }
-
-        public ValdationExceptions(IReadOnlyCollection<ValidationFailure> errors)
-            : base(CreateErrorMessage(errors))
+        public IReadOnlyCollection<ValidationError> _errors { get; set; }
+        public ValdationException(IReadOnlyCollection<ValidationError> errors)
         {
-            Errors = errors;
+            _errors = errors;
         }
-
-        private static string CreateErrorMessage(IEnumerable<ValidationFailure> failures) =>
-            string.Join("; ", failures.Select(f => $"{f.PropertyName}: {f.ErrorMessage}"));
     }
 
-    public sealed record ValidationError : Error
+    public record ValidationError(string PropertyName, string ErrorMessage);
+
+    public class BadRequestException : ApplicationException
     {
-        public ValidationError(string propertyName, Error[] errors)
-            : base("General.ValidationFailed", string.Join("; ", errors.Select(e => e.description)))
-        {
-            Errors = errors;
-        }
+        public BadRequestException(string message) : base(message) { }
 
-        public Error[] Errors { get; }
-
-        public static ValidationError FromResult(IEnumerable<Result> results)
-        {
-            var errors = results.Where(r => r.IsFailure).Select(r => r.Error).ToArray();
-            return new ValidationError("PropertyName", errors);
-        }
+        public override string Title => "Bad Request";
     }
+
+    public class NotFoundException : ApplicationException
+    {
+        public NotFoundException(string message) : base(message) { }
+
+        public override string Title => "Not Found";
+    }
+
+    public abstract class ApplicationException : Exception
+    {
+        protected ApplicationException(string message) : base(message) { }
+
+        public virtual string Title => "Application Error";
+    }
+
 }

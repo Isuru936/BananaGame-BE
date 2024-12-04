@@ -17,7 +17,8 @@ namespace BananaGame.Api.Modules
             {
                 return Results.Ok(await _mediator.Send(command));
             });
-*/
+            */
+
             MapGroup.MapPut("/player/{id}", async (UpdatePlayerCommand command, [FromServices] IMediator _mediator) =>
             {
                 return Results.Ok(await _mediator.Send(command));

@@ -8,7 +8,7 @@ namespace BananaGame.Application.Features.Auth.Validator
         public SignInCommandValidator()
         {
             RuleFor(x => x.Username).NotEmpty().WithMessage("User Cannot be Empty");
-            RuleFor(x => x.Username).NotEmpty().WithMessage("User Cannot be Empty");
+            RuleFor(x => x.Password).NotEmpty().WithMessage("User Password Cannot be Empty");
         }
     }
 }
