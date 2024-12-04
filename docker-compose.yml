@@ -1,0 +1,17 @@
+services:
+
+  db:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=1Secure*Password1
+
+  bananagame.api:
+    build:
+      context: .
+      dockerfile: BananaGame.Api/Dockerfile
+    ports:
+      - "7185:7185"
+    depends_on:
+      - db
+        
