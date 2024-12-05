@@ -20,6 +20,8 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddAuthorization();
 
+builder.Services.RegisterSerilogLogging(cfg);
+
 builder.Services.AddSwaggerGen(option =>
 {
     option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
