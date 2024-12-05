@@ -13,12 +13,6 @@ namespace BananaGame.Api.Modules
             RouteGroupBuilder MapGroup = app.MapGroup("api")
                 .WithTags("Player").RequireAuthorization();
 
-            /* MapGroup.MapPost("/player", async (CreatePlayerCommand command, [FromServices] IMediator _mediator) =>
-            {
-                return Results.Ok(await _mediator.Send(command));
-            });
-            */
-
             MapGroup.MapPut("/player/{id}", async (UpdatePlayerCommand command, [FromServices] IMediator _mediator) =>
             {
                 return Results.Ok(await _mediator.Send(command));

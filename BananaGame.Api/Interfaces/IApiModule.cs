@@ -2,7 +2,6 @@
 {
     public interface IApiModule
     {
-
         void MapEndpoint(WebApplication app);
     }
 }

@@ -23,8 +23,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BananaGame.Domain", "Banana
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BananaGame.Persistance", "BananaGame.Persistance\BananaGame.Persistance.csproj", "{FC27CAAF-F0AD-411E-8100-4689979B8615}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{108EC389-D22A-4D6E-89BF-E07DFEAD1DD9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{4F12BDFB-D868-4CDA-AA80-1F17AD3D2E03}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BananaGame.Identity", "BananaGame.Identity\BananaGame.Identity.csproj", "{303A28B2-E561-41A9-9370-8933B1197EC5}"
@@ -51,10 +49,6 @@ Global
 		{FC27CAAF-F0AD-411E-8100-4689979B8615}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC27CAAF-F0AD-411E-8100-4689979B8615}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC27CAAF-F0AD-411E-8100-4689979B8615}.Release|Any CPU.Build.0 = Release|Any CPU
-		{108EC389-D22A-4D6E-89BF-E07DFEAD1DD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{108EC389-D22A-4D6E-89BF-E07DFEAD1DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{108EC389-D22A-4D6E-89BF-E07DFEAD1DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{108EC389-D22A-4D6E-89BF-E07DFEAD1DD9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{303A28B2-E561-41A9-9370-8933B1197EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{303A28B2-E561-41A9-9370-8933B1197EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{303A28B2-E561-41A9-9370-8933B1197EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU

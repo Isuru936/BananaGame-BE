@@ -17,17 +17,6 @@ namespace BananaGame.Api.Modules
                 return Results.Ok(await _mediator.Send(command));
             });
 
-            /* MapGroup.MapGet("/", async ([FromServices] IMediator _mediator) =>
-           {
-               return Results.Ok(await _mediator.Send(new GetAllGamesSessionsQuery()));
-           });
-            *//*
-           MapGroup.MapPut("/", async (UpdateGameSessionCommand command, [FromServices] IMediator _mediator) =>
-           { 
-              return Results.Ok(await _mediator.Send(command));
-           });
-            */
-
             MapGroup.MapPut("/end-session", async (EndGameSessionCommand command, [FromServices] IMediator _mediator) =>
             {
                 return Results.Ok(await _mediator.Send(command));
