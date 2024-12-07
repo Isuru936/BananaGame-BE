@@ -48,7 +48,6 @@ builder.Services.AddSwaggerGen(option =>
         }
     });
 });
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
@@ -56,7 +55,6 @@ builder.Services.AddCors(options =>
                         .AllowAnyMethod()
                         .AllowAnyHeader());
 });
-
 
 var app = builder.Build();
 
@@ -68,12 +66,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
 app.UseAuthentication();
-app.UseAuthorization();
-
 app.UseCors("AllowSpecificOrigin");
-
+app.UseAuthorization();
 
 app.Run();

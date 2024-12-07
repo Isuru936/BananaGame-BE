@@ -10,10 +10,7 @@ namespace BananaGame.Api.Modules.Authentication
         public void MapEndpoint(WebApplication app)
         {
             var MapGroup = app.MapGroup("authentication")
-                .WithTags("authentication")
-                .WithDescription(
-                    "There are only two roles as LibraryStaffMinor, LibraryStaffManagement"
-                );
+                .WithTags("authentication");
 
             MapGroup.MapPost(
                 "/signUp",
