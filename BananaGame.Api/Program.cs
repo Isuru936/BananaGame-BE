@@ -51,7 +51,7 @@ builder.Services.AddSwaggerGen(option =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        policy => policy.WithOrigins("http://localhost:5173") // Frontend URL
+        policy => policy.WithOrigins("https://witty-forest-077d05c10.4.azurestaticapps.net") // Frontend URL
                         .AllowAnyMethod()
                         .AllowAnyHeader());
 });
