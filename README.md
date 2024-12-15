@@ -46,4 +46,24 @@ You can access the deployed Banana Game using the following link:
 
 ---
 
+## Frontend Configuration Guide
+
+1. **Clone the Frontend Repository**  
+   Clone the frontend repository from the following link:  
+   [Banana Game Frontend](https://github.com/Isuru936/BananaGame-FE)
+
+2. **Install Node Modules**  
+   Navigate to the project directory and install the required dependencies by running:  
+   ```bash
+   npm install
+   ```
+
+3. **Run the Frontend Application**  
+   Start the development server and enjoy the game:  
+   ```bash
+   npm run dev
+   ```
+
+---
+
 If you need further assistance, feel free to reach out!
