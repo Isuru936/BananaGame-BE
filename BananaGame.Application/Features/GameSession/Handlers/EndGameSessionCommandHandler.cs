@@ -40,7 +40,11 @@ namespace BananaGame.Application.Features.GameSession.Handlers
             player.UpdatePlayerStats(farthestLevel, totalLevelsPlayed, newTotalTimePlayed, newHihghestScore);
 
             await _playerRepository.UpdateAsync(player);
-            await _gameSessionRepository.DeleteAsync(currentSession!);
+
+            if (player.GameSession != null)
+            {
+                await _gameSessionRepository.DeleteAsync(currentSession!);
+            }
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
