@@ -22,7 +22,7 @@ namespace BananaGame.Application.Features.Player.Handlers
 
         public async Task<Result<IReadOnlyCollection<PlayerResponse>>> Handle(GetAllPlayersQuery query, CancellationToken cancellationToken)
         {
-            var players = await _playerRepository.GetAll(q => q.Include(p => p.GameSession));
+            var players = await _playerRepository.GetAll(q => q.Include(p => p.GameSession).Take(5));
 
             return Result.Success(_mapper.Map<IReadOnlyCollection<PlayerResponse>>(players));
         }
